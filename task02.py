@@ -12,3 +12,12 @@ data = req.text
 # Use the json encoded data that is retrieved from this website and print out the weekly menu
 # You will need to decipher the json decoded data to determine what information the 
 # dictionary object contains
+
+decodedData = json.loads(data)
+
+for i in decodedData['menu']:
+    print(f"Date: {i['date']}, {i['dayname']}")
+    print(f"    Soup: {i['soup']}")
+    print(f"    Shortorder: {i['shortorder']}")
+    print(f"    Entree: {i['entree']}")
+    print(f"    Notes: {i['notes']}\n")
